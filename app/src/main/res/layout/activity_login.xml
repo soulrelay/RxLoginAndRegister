@@ -1,0 +1,63 @@
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".Activity.LoginActivity"
+        >
+
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:ems="10"
+            android:id="@+id/edt_email"
+            android:hint="Enter email here"
+            android:gravity="center"
+            android:textColorHint="@color/olive"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/lime"
+            android:ellipsize="start" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:ems="10"
+            android:gravity="center"
+            android:id="@+id/edt_password"
+            android:hint="Password"
+            android:textColorHint="@color/olive"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/lime"
+            android:ellipsize="start" />
+
+        <Button
+            android:layout_width="250dp"
+            android:layout_height="45dp"
+            android:id="@+id/btn_login"
+            android:layout_gravity="center_horizontal"
+            android:text="Login"
+            android:textColor="@color/white"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/yellow"
+            android:text="Don&apos;t have a ID?"
+            android:id="@+id/btn_register"
+            android:layout_gravity="center_horizontal" />
+
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="@color/olive"
+            android:id="@+id/tv_response"
+            android:paddingTop="10dp"
+            android:layout_gravity="center_horizontal" />
+
+
+    </LinearLayout>

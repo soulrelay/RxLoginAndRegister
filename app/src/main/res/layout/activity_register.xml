@@ -1,0 +1,84 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:orientation="vertical"
+    android:gravity="center"
+    >
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:ems="10"
+        android:id="@+id/edt_reg_username"
+        android:hint="Your Name"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:padding="10dp"
+        android:textColorHint="@color/olive"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/lime"
+        android:ellipsize="start"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:gravity="center"
+        android:id="@+id/edt_reg_password"
+        android:hint="Password"
+        android:textColorHint="@color/olive"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/lime"
+        android:layout_marginTop="20dp"
+        android:padding="10dp"
+        android:ellipsize="start" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:ems="10"
+        android:id="@+id/edt_reg_email"
+        android:hint="Email"
+        android:gravity="center"
+        android:textColorHint="@color/olive"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/lime"
+        android:ellipsize="start"
+        android:layout_marginTop="20dp"
+        android:padding="10dp"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/edt_reg_contact"
+        android:hint="Contact"
+        android:gravity="center"
+        android:textColorHint="@color/olive"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/lime"
+        android:ellipsize="start"
+        android:layout_marginTop="20dp"
+        android:padding="10dp"
+        />
+
+
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="50dp"
+        android:padding="10dp"
+        android:id="@+id/btn_reg_submit"
+        android:layout_gravity="center_horizontal"
+        android:text="Register"
+        android:textColor="@color/white"
+        />
+
+</LinearLayout>
