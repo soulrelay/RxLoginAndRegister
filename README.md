@@ -4,7 +4,24 @@
 
 ## 客户端
 
-RxJava 和 Retrofit 结合使用完成基本的登录和注册功能
+使用RxJava和Retrofit搭配完成基本的登录和注册功能
+> * RxJava：一个在 Java VM 上使用可观测的序列来组成异步的、基于事件的程序的库（说到根上，它就是一个实现异步操作的库）
+> * Retrofit: 类型安全的网络库，封装了okhttp
+
+
+### 登录api
+
+一个带有两个参数的post请求
+```java
+public interface LoginApi {
+    @FormUrlEncoded
+    @POST("/LoginServer/login.php")
+    Observable<ResultReturn> login(@Field("email") String email, @Field("password") String password);
+}
+```
+
+注意：具体使用方法请参考详细代码 ，其它相关概念不再赘述。
+
 
 ![image](https://raw.githubusercontent.com/feifei003603/RxLoginAndRegister/master/app/src/main/res/raw/login.jpg)
 
@@ -17,6 +34,8 @@ RxJava 和 Retrofit 结合使用完成基本的登录和注册功能
 功能：完成了一个最基本的登录和注册流程
 
 注意：代码结构相对简单！仅供需要的朋友进行参考
+
+部分代码参考github上的一个demo，一时间找不到那个demo的链接了，同时根据本案例自身需求做了一些调整
 
 相关介绍：
 
