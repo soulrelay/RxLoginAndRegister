@@ -18,6 +18,7 @@ import rx.Subscription;
 
 /**
  * Created by sushuai on 2016/3/25.
+ *
  */
 public abstract class BaseActivity extends AppCompatActivity implements View.OnClickListener {
     protected Subscription subscription;
