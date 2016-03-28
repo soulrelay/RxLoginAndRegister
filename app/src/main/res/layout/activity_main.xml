@@ -8,5 +8,25 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.soulrelay.loginclient.Activity.MainActivity">
+    <ViewStub
+        android:id="@+id/activity_loading_stub"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:inflatedId="@+id/activity_loading_subTree"
+        android:layout="@layout/common_loading" />
+
+    <ViewStub
+        android:id="@+id/activity_net_error_stub"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:inflatedId="@+id/activity_net_error_subTree"
+        android:layout="@layout/common_net_error_layout" />
+
+    <ViewStub
+        android:id="@+id/activity_empty_stub"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:inflatedId="@+id/activity_empty_subTree"
+        android:layout="@layout/common_tips_layout" />
 
 </RelativeLayout>

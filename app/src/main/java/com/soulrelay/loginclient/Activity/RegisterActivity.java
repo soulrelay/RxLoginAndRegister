@@ -2,6 +2,7 @@ package com.soulrelay.loginclient.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -41,11 +42,13 @@ public class RegisterActivity extends BaseActivity {
 
         @Override
         public void onError(Throwable e) {
+            dismissLoadingView();
             Toast.makeText(RegisterActivity.this, "onError:" + e.toString(), Toast.LENGTH_SHORT).show();
         }
 
         @Override
         public void onNext(ResultReturn result) {
+            dismissLoadingView();
             Toast.makeText(RegisterActivity.this, result.getMsg(), Toast.LENGTH_SHORT).show();
             if (result.isSuccess()) {
                 startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
@@ -86,10 +89,16 @@ public class RegisterActivity extends BaseActivity {
      */
     private void registerUser(final String name, final String email,
                               final String password, final String contact) {
+        showLoadingView();
         subscription = Network.getRegisterApi()
                 .register(name, email, contact, password)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(observer);
+    }
+
+    @Override
+    public void onClick(View v) {
+
     }
 }

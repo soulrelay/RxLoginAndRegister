@@ -1,84 +1,105 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:orientation="vertical"
-    android:gravity="center"
-    >
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-
-    <EditText
+    <LinearLayout
+        android:id="@+id/ll_register"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="text"
-        android:ems="10"
-        android:id="@+id/edt_reg_username"
-        android:hint="Your Name"
+        android:layout_height="match_parent"
         android:gravity="center"
-        android:layout_marginTop="20dp"
-        android:padding="10dp"
-        android:textColorHint="@color/olive"
-        android:layout_gravity="center_horizontal"
-        android:textColor="@color/lime"
-        android:ellipsize="start"
-        />
+        android:orientation="vertical">
 
-    <EditText
+        <EditText
+            android:id="@+id/edt_reg_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:ellipsize="start"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="Your Name"
+            android:inputType="text"
+            android:padding="10dp"
+            android:textColor="@color/lime"
+            android:textColorHint="@color/olive" />
+
+        <EditText
+            android:id="@+id/edt_reg_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:ellipsize="start"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:padding="10dp"
+            android:textColor="@color/lime"
+            android:textColorHint="@color/olive" />
+
+        <EditText
+            android:id="@+id/edt_reg_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:ellipsize="start"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:padding="10dp"
+            android:textColor="@color/lime"
+            android:textColorHint="@color/olive" />
+
+        <EditText
+            android:id="@+id/edt_reg_contact"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:ellipsize="start"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="Contact"
+            android:inputType="number"
+            android:padding="10dp"
+            android:textColor="@color/lime"
+            android:textColorHint="@color/olive" />
+
+
+        <Button
+            android:id="@+id/btn_reg_submit"
+            android:layout_width="250dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="50dp"
+            android:padding="10dp"
+            android:text="Register"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+    <ViewStub
+        android:id="@+id/activity_loading_stub"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:ems="10"
-        android:gravity="center"
-        android:id="@+id/edt_reg_password"
-        android:hint="Password"
-        android:textColorHint="@color/olive"
-        android:layout_gravity="center_horizontal"
-        android:textColor="@color/lime"
-        android:layout_marginTop="20dp"
-        android:padding="10dp"
-        android:ellipsize="start" />
+        android:layout_height="match_parent"
+        android:inflatedId="@+id/activity_loading_subTree"
+        android:layout="@layout/common_loading" />
 
-    <EditText
+    <ViewStub
+        android:id="@+id/activity_net_error_stub"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textEmailAddress"
-        android:ems="10"
-        android:id="@+id/edt_reg_email"
-        android:hint="Email"
-        android:gravity="center"
-        android:textColorHint="@color/olive"
-        android:layout_gravity="center_horizontal"
-        android:textColor="@color/lime"
-        android:ellipsize="start"
-        android:layout_marginTop="20dp"
-        android:padding="10dp"
-        />
+        android:layout_height="match_parent"
+        android:inflatedId="@+id/activity_net_error_subTree"
+        android:layout="@layout/common_net_error_layout" />
 
-    <EditText
+    <ViewStub
+        android:id="@+id/activity_empty_stub"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="10"
-        android:id="@+id/edt_reg_contact"
-        android:hint="Contact"
-        android:gravity="center"
-        android:textColorHint="@color/olive"
-        android:layout_gravity="center_horizontal"
-        android:textColor="@color/lime"
-        android:ellipsize="start"
-        android:layout_marginTop="20dp"
-        android:padding="10dp"
-        />
+        android:layout_height="match_parent"
+        android:inflatedId="@+id/activity_empty_subTree"
+        android:layout="@layout/common_tips_layout" />
 
-
-    <Button
-        android:layout_width="250dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="50dp"
-        android:padding="10dp"
-        android:id="@+id/btn_reg_submit"
-        android:layout_gravity="center_horizontal"
-        android:text="Register"
-        android:textColor="@color/white"
-        />
-
-</LinearLayout>
+</RelativeLayout>

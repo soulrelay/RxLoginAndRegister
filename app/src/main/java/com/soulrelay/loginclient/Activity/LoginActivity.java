@@ -43,11 +43,13 @@ public class LoginActivity extends BaseActivity {
 
         @Override
         public void onError(Throwable e) {
+            dismissLoadingView();
             Toast.makeText(LoginActivity.this, "onError:"+e.toString(), Toast.LENGTH_SHORT).show();
         }
 
         @Override
         public void onNext(ResultReturn result) {
+            dismissLoadingView();
             Toast.makeText(LoginActivity.this, result.getMsg(), Toast.LENGTH_SHORT).show();
             if(result.isSuccess()){
                 startActivity(new Intent(LoginActivity.this, MainActivity.class));
@@ -74,6 +76,7 @@ public class LoginActivity extends BaseActivity {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_login:
+                showLoadingView();
                 excuteLogin();
                 break;
             case R.id.btn_register:
