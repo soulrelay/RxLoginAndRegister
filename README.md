@@ -12,6 +12,7 @@
 ### 登录api
 
 一个带有两个参数的post请求
+
 ```java
 public interface LoginApi {
     @FormUrlEncoded
@@ -20,6 +21,54 @@ public interface LoginApi {
 }
 ```
 
+### 注册api
+
+```java
+public interface RegisterApi {
+    @FormUrlEncoded
+    @POST("/LoginServer/register.php")
+    Observable<ResultReturn> register(@Field("name") String name, @Field("email") String email, @Field("contact") String contact, @Field("password") String password);
+}
+```
+
+### NetWork
+
+```java
+public class Network {
+    private static LoginApi loginApi;
+    private static RegisterApi registerApi;
+    private static OkHttpClient okHttpClient = new OkHttpClient();
+    private static Converter.Factory gsonConverterFactory = GsonConverterFactory.create();
+    private static CallAdapter.Factory rxJavaCallAdapterFactory = RxJavaCallAdapterFactory.create();
+
+    public static LoginApi getloginApi() {
+        if (loginApi == null) {
+            Retrofit retrofit = new Retrofit.Builder()
+                    .client(okHttpClient)
+                    .baseUrl(UrlContainer.BASE_URL)
+                    .addConverterFactory(gsonConverterFactory)
+                    .addCallAdapterFactory(rxJavaCallAdapterFactory)
+                    .build();
+            loginApi = retrofit.create(LoginApi.class);
+        }
+        return loginApi;
+    }
+
+    public static RegisterApi getRegisterApi() {
+        if (registerApi == null) {
+            Retrofit retrofit = new Retrofit.Builder()
+                    .client(okHttpClient)
+                    .baseUrl(UrlContainer.BASE_URL)
+                    .addConverterFactory(gsonConverterFactory)
+                    .addCallAdapterFactory(rxJavaCallAdapterFactory)
+                    .build();
+            registerApi = retrofit.create(RegisterApi.class);
+        }
+        return registerApi;
+    }
+
+}
+```
 注意：具体使用方法请参考详细代码 ，其它相关概念不再赘述。
 
 
